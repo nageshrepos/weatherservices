@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">
+    <h4>{{ componentTitle }}</h4>
+    <div class="row">
+      <p *ngIf="!result"><em>Loading...</em></p>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="col-md-6">
+      <p>Enter Celcius: <input type="text" [(ngModel)]=celcius class="form-control"/> </p>
+      <h5>
+        Fahrenheit:  {{ result.fahrenheit }}
+      </h5>
+      <h5> Klevin: {{ result.klevin }}</h5>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <button (click)=sendDetails() class="btn btn-primary">Submit</button>
+  </div>
+
+ </div>
+
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
